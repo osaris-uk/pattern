@@ -5,11 +5,13 @@ A simple pattern for Laravel 5.5
 
 `composer create-project osaris-uk/pattern --prefer-dist projectname`
 
+After composer has finished hook up your DB in .env and run `php artisan:migrate`
+
 ## What is pattern?
 
 Pattern is a simple boilerplate for Laravel applications.  It includes a standard laravel installation but with some other features pre-configured:
 
- - Role based access control
+ - Role & Permission based access control
  - E-Mail account activation
  - [Sweet Alert](https://github.com/t4t5/sweetalert) preinstalled 
  - Notifications built in using [Notify](https://github.com/codecourse/notify)
