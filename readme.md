@@ -15,6 +15,7 @@ Pattern is a simple boilerplate for Laravel applications.  It includes a standar
  - Notifications built in using [Notify](https://github.com/codecourse/notify)
  - EU cookie consent using [Cookieconsent](https://github.com/insites/cookieconsent)
  - 'My Account' Area including dashboard, account update and change password functionality
+ - env:set {env} artisan command
 
 ## New features / issues?
 
