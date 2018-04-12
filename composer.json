@@ -1,8 +1,6 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
-    "license": "MIT",
+    "name": "osaris-uk/pattern",
+    "description": "A simple pattern for Laravel",
     "type": "project",
     "require": {
         "php": ">=7.0.0",
