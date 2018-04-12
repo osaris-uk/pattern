@@ -3,7 +3,7 @@ A simple pattern for Laravel 5.5
 
 ## Installation
 
-`composer create-project osaris-uk/pattern projectname`
+`composer create-project osaris-uk/pattern --prefer-dist projectname`
 
 ## What is pattern?
 
