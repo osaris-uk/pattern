@@ -3,43 +3,43 @@
 @section('title') Change Password @endsection
 
 @section('account.content')
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <form action="{{ route('account.password.store') }}" method="POST">
-                <div class="form-group{{ $errors->has('current_password') ? ' has-error' : '' }}">
-                    <label for="current_password" class="control-label">Current Password</label>
-                    <input type="password" name="current_password" id="current_password" class="form-control">
-                    @if ($errors->has('current_password'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('current_password') }}</strong>
-                        </span>
-                    @endif
-                </div>
+    <form method="POST" action="{{ route('account.password.store') }}">
+        {{ csrf_field() }}
 
-                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <label for="password" class="control-label">New Password</label>
-                    <input type="password" name="password" id="password" class="form-control">
-                    @if ($errors->has('password'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('password') }}</strong>
-                        </span>
-                    @endif
-                </div>
-
-                <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                    <label for="password_confirmation" class="control-label">Confirm New Password</label>
-                    <input type="password" name="password_confirmation" id="password_confirmation" class="form-control">
-                    @if ($errors->has('password_confirmation'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('password_confirmation') }}</strong>
-                        </span>
-                    @endif
-                </div>
-
-                <button type="submit" class="btn btn-primary">Change Password</button>
-
-                {{ csrf_field() }}
-            </form>
+        <div class="form-group">
+            <label for="current_password" class="form-label text-md-right">Current Password</label>
+            <input id="current_password" type="current_password" class="form-control{{ $errors->has('current_password') ? ' is-invalid' : '' }}" name="current_password" required>
+            @if ($errors->has('current_password'))
+                <span class="invalid-feedback">
+                    <strong>{{ $errors->first('current_password') }}</strong>
+                </span>
+            @endif
         </div>
-    </div>
+
+        <div class="form-group">
+            <label for="password" class="form-label text-md-right">New Password</label>
+            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+            @if ($errors->has('password'))
+                <span class="invalid-feedback">
+                    <strong>{{ $errors->first('password') }}</strong>
+                </span>
+            @endif
+        </div>
+
+        <div class="form-group">
+            <label for="password-confirm" class="form-label text-md-right">Confirm New Password</label>
+            <input id="password-confirm" type="password" class="form-control{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" name="password_confirmation" required>
+            @if ($errors->has('password_confirmation'))
+                <span class="invalid-feedback">
+                    <strong>{{ $errors->first('password_confirmation') }}</strong>
+                </span>
+            @endif
+        </div>
+
+        <div class="form-group mb-0">
+            <button type="submit" class="btn btn-primary">
+                Change Password
+            </button>
+        </div>
+    </form>
 @endsection

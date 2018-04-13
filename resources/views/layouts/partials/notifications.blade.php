@@ -1,10 +1,10 @@
 @if (notify()->ready() && notify()->option('provider') !== 'swal')
-	<div class="alert alert-{{ notify()->type() }}" role="alert">
-		{!! notify()->message() !!}
-		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		</button>
-	</div>
+    <div class="alert alert-{{ notify()->type() }}" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {!! notify()->message() !!}
+    </div>
 @endif
 
 @if (notify()->ready() && notify()->option('provider') === 'swal')

@@ -2,19 +2,19 @@
 
 @section('content')
     Home<hr>
-    <div class="panel panel-info">
-        <div class="panel-heading">
-            <h3 class="panel-title">Custom Blade Directives</h3>
+    <div class="card">
+        <div class="card-header">
+            Custom Blade Directives
         </div>
-        <div class="panel-body">
-            <h4>&#64;role()</h4>
+        <div class="card-block">
+            <h5>&#64;role()</h5>
             <p>
                 <code>
                     &#64;role('admin') &lt;content&gt; &#64;endrole, &#64;role('user') &lt;content&gt; &#64;endrole, etc..
                 </code>
             </p>
 
-            <h4>&#64;activeclass()</h4>
+            <h5>&#64;activeclass()</h5>
             <p>
                 <code>
                     &#64;activeclass('account'), &#64;activeclass('/'), etc..
@@ -26,13 +26,13 @@
             </p>
         </div>
     </div>
-
-    <div class="panel panel-info">
-        <div class="panel-heading">
-            <h3 class="panel-title">notify()</h3>
+    <br> 
+    <div class="card">
+        <div class="card-header">
+            notify()
         </div>
-        <div class="panel-body">
-            <h4>SweetAlert</h4>
+        <div class="card-block">
+            <h5>SweetAlert</h5>
             <p>
                 <code>
                     notify()->flash('Welcome!', 'success', [<br>
@@ -45,7 +45,7 @@
                 </code>
             </p>
 
-            <h4>Bootstrap</h4>
+            <h5>Bootstrap</h5>
             <p>
                 <code>
                     notify()->flash('Password Successfully Changed', 'success');<br>

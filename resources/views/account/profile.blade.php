@@ -3,33 +3,33 @@
 @section('title') My Profile @endsection
 
 @section('account.content')
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <form action="{{ route('account.profile.store') }}" method="POST">
-                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                    <label for="name" class="control-label">Name</label>
-                    <input type="text" name="name" id="name" class="form-control" value="{{ old('name', auth()->user()->name) }}">
-                    @if ($errors->has('name'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('name') }}</strong>
-                        </span>
-                    @endif
-                </div>
+    <form method="POST" action="{{ route('account.profile.store') }}">
+        {{ csrf_field() }}
 
-                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <label for="email" class="control-label">E-Mail</label>
-                    <input type="text" name="email" id="email" class="form-control" value="{{ old('email', auth()->user()->email) }}">
-                    @if ($errors->has('email'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('email') }}</strong>
-                        </span>
-                    @endif
-                </div>
-
-                <button type="submit" class="btn btn-primary">Save</button>
-
-                {{ csrf_field() }}
-            </form>
+        <div class="form-group">
+            <label for="name" class="form-label text-md-right">Name</label>
+            <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name', auth()->user()->name) }}" required autofocus>
+            @if ($errors->has('name'))
+                <span class="invalid-feedback">
+                    <strong>{{ $errors->first('name') }}</strong>
+                </span>
+            @endif
         </div>
-    </div>
+
+        <div class="form-group">
+            <label for="email" class="form-label text-md-right">E-Mail Address</label>
+            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email', auth()->user()->email) }}" required>
+            @if ($errors->has('email'))
+                <span class="invalid-feedback">
+                    <strong>{{ $errors->first('email') }}</strong>
+                </span>
+            @endif
+        </div>
+
+        <div class="form-group mb-0">
+            <button type="submit" class="btn btn-primary">
+                Save
+            </button>
+        </div>
+    </form>
 @endsection

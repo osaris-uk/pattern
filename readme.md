@@ -5,7 +5,7 @@ A simple pattern for Laravel 5.5
 
 `composer create-project osaris-uk/pattern --prefer-dist projectname`
 
-After composer has finished hook up your DB in .env and run `php artisan:migrate`
+After composer has finished hook up your DB in .env and run `php artisan migrate`
 
 ## What is pattern?
 
@@ -18,6 +18,7 @@ Pattern is a simple boilerplate for Laravel applications.  It includes a standar
  - EU cookie consent using [Cookieconsent](https://github.com/insites/cookieconsent)
  - 'My Account' Area including dashboard, account update and change password functionality
  - env:set {env} artisan command
+ - Bootstrap 4.1
 
 ## New features / issues?
 
