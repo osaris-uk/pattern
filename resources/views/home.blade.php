@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    Home<hr>
+    <i class="fas fa-home"></i> Home<hr>
     <div class="card">
         <div class="card-header">
             Custom Blade Directives

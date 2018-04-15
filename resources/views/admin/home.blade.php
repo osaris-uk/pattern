@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('admin.layouts.admin')
 
-@section('title') Admin @endsection
+@section('title') Dashboard @endsection
 
 @section('content')
-    Admin area
+    Admin Dashboard
 @endsection

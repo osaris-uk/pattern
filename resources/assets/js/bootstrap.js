@@ -1,4 +1,3 @@
-
 window._ = require('lodash');
 window.Popper = require('popper.js').default;
 
@@ -57,3 +56,20 @@ if (token) {
  * Import SweetAlert
  */
 import swal from 'sweetalert';
+
+/**
+ * Import Font Awesome
+ */
+import fontawesome from '@fortawesome/fontawesome'
+
+fontawesome.config = {
+	searchPseudoElements: true
+};
+
+import regular from '@fortawesome/fontawesome-free-regular'
+import solid from '@fortawesome/fontawesome-free-solid'
+import brands from '@fortawesome/fontawesome-free-brands'
+
+fontawesome.library.add(regular)
+fontawesome.library.add(solid)
+fontawesome.library.add(brands)

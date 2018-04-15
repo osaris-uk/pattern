@@ -1,0 +1,280 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  overflow-x: hidden;
+  margin-top: 55px;
+  margin-bottom: 60px;
+}
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #fff;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.04);
+}
+.card-block {
+  padding: 20px;
+}
+
+// SB Admin css
+.content-wrapper {
+  min-height: calc(100vh - 115px);
+  padding-top: 1rem;
+  overflow-x: hidden;
+}
+#mainNav .navbar-collapse {
+  overflow: auto;
+  max-height: 75vh;
+}
+#mainNav .navbar-collapse .navbar-nav .nav-item .nav-link {
+  cursor: pointer;
+}
+#mainNav .navbar-collapse .navbar-sidenav .nav-link-collapse .svg-inline--fa.fa-angle-down,
+#mainNav .navbar-collapse .navbar-sidenav .nav-link-collapse .svg-inline--fa.fa-angle-right {
+  float: right;
+}
+#mainNav .navbar-collapse .navbar-sidenav .nav-link-collapse:after {
+  display: none;
+  content: '\f107';
+  font-family: 'Font Awesome 5 Solid';
+}
+#mainNav .navbar-collapse .navbar-sidenav .nav-link-collapse.collapsed:after {
+  display: none;
+  content: '\f105';
+}
+#mainNav .navbar-collapse .navbar-sidenav .sidenav-second-level,
+#mainNav .navbar-collapse .navbar-sidenav .sidenav-third-level {
+  padding-left: 0;
+}
+#mainNav .navbar-collapse .navbar-sidenav .sidenav-second-level > li > a,
+#mainNav .navbar-collapse .navbar-sidenav .sidenav-third-level > li > a {
+  display: block;
+  padding: 0.5em 0;
+}
+#mainNav .navbar-collapse .navbar-sidenav .sidenav-second-level > li > a:focus, #mainNav .navbar-collapse .navbar-sidenav .sidenav-second-level > li > a:hover,
+#mainNav .navbar-collapse .navbar-sidenav .sidenav-third-level > li > a:focus,
+#mainNav .navbar-collapse .navbar-sidenav .sidenav-third-level > li > a:hover {
+  text-decoration: none;
+}
+#mainNav .navbar-collapse .navbar-sidenav .sidenav-second-level > li > a {
+  padding-left: 1em;
+}
+#mainNav .navbar-collapse .navbar-sidenav .sidenav-third-level > li > a {
+  padding-left: 2em;
+}
+#mainNav .navbar-collapse .sidenav-toggler {
+  display: none;
+}
+@media (min-width: 992px) {
+  #mainNav .navbar-brand {
+    width: 250px;
+  }
+  #mainNav .navbar-collapse {
+    overflow: visible;
+    max-height: none;
+  }
+  #mainNav .navbar-collapse .navbar-sidenav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: 55px;
+  }
+  #mainNav .navbar-collapse .navbar-sidenav > .nav-item {
+    width: 250px;
+    padding: 0;
+  }
+  #mainNav .navbar-collapse .navbar-sidenav > .nav-item > .nav-link {
+    padding: 1em;
+  }
+  #mainNav .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level,
+  #mainNav .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level {
+    padding-left: 0;
+    list-style: none;
+  }
+  #mainNav .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level > li,
+  #mainNav .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li {
+    width: 250px;
+  }
+  #mainNav .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level > li > a,
+  #mainNav .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li > a {
+    padding: 1em;
+  }
+  #mainNav .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level > li > a {
+    padding-left: 2.75em;
+  }
+  #mainNav .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li > a {
+    padding-left: 3.75em;
+  }
+}
+#mainNav.fixed-top .sidenav-toggler {
+  display: none;
+}
+@media (min-width: 992px) {
+  #mainNav.fixed-top .navbar-sidenav {
+    height: calc(101vh - 112px);
+  }
+  #mainNav.fixed-top .sidenav-toggler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: calc(100vh - 60px);
+  }
+  #mainNav.fixed-top .sidenav-toggler > .nav-item {
+    width: 250px;
+    padding: 0;
+  }
+  #mainNav.fixed-top .sidenav-toggler > .nav-item > .nav-link {
+    padding: 1.3em;
+  }
+}
+body.sidenav-toggled #mainNav.fixed-top .sidenav-toggler {
+  overflow-x: hidden;
+  width: 55px;
+}
+body.sidenav-toggled #mainNav.fixed-top .sidenav-toggler .nav-item,
+body.sidenav-toggled #mainNav.fixed-top .sidenav-toggler .nav-link {
+  width: 55px !important;
+}
+body.sidenav-toggled #mainNav.fixed-top #sidenavToggler i {
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: 'FlipH';
+}
+#mainNav.static-top .sidenav-toggler {
+  display: none;
+}
+@media (min-width: 992px) {
+  #mainNav.static-top .sidenav-toggler {
+    display: flex;
+  }
+}
+body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: 'FlipH';
+}
+@media (min-width: 992px) {
+  .content-wrapper {
+    margin-left: 250px;
+  }
+}
+#sidenavToggler i {
+  font-weight: 800;
+}
+.navbar-sidenav-tooltip.show {
+  display: none;
+}
+@media (min-width: 992px) {
+  body.sidenav-toggled .content-wrapper {
+    margin-left: 55px;
+  }
+}
+body.sidenav-toggled .navbar-sidenav {
+  width: 55px;
+}
+
+body.sidenav-toggled .navbar-sidenav .nav-link-text {
+  display: none;
+}
+body.sidenav-toggled .navbar-sidenav .nav-item,
+body.sidenav-toggled .navbar-sidenav .nav-link {
+  width: 55px !important;
+}
+body.sidenav-toggled .navbar-sidenav .nav-item:after,
+body.sidenav-toggled .navbar-sidenav .nav-link:after {
+  display: none;
+}
+body.sidenav-toggled .navbar-sidenav .nav-item {
+  white-space: nowrap;
+}
+body.sidenav-toggled .navbar-sidenav-tooltip.show {
+  display: flex;
+}
+@media (min-width: 576px) {
+  .card-columns {
+    column-count: 1;
+  }
+}
+@media (min-width: 768px) {
+  .card-columns {
+    column-count: 2;
+  }
+}
+
+// Sidebar & Navbar Text Color
+#navbarResponsive > ul.navbar-nav.ml-auto > li > a,
+#mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level > li > a,
+#mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li > a,
+#mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item > .nav-link,
+#mainNav.navbar-light .navbar-collapse .navbar-sidenav .nav-link-collapse:after {
+  color: rgba(0, 0, 0, 0.5);
+}
+// Sidebar & Navbar Text Hover Color
+#navbarResponsive > ul.navbar-nav.ml-auto > li > a:hover,
+#mainNav.navbar-light .navbar-collapse .navbar-nav > .nav-item.dropdown > .nav-link:after,
+#mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level > li > a:hover,
+#mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li > a:hover,
+#mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item > .nav-link:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
+@media (min-width: 992px) {
+  // Main Sidebar Background Color
+  #mainNav.navbar-light .navbar-collapse .navbar-sidenav {
+    background: #fff;
+  }
+  // Sidebar Dropdown Background Color
+  #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level,
+  #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level {
+    background: #fff;
+  }
+  // Sidebar Active Link
+  #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a {
+    color: #fff !important;
+    background-color: #007bff !important;
+  }
+  // Sidebar Link Hover Background
+  #mainNav.navbar-light .navbar-collapse .navbar-sidenav li a:hover {
+    background-color: #f8f9fa;
+  }
+  // Sidebar Toggler
+  #sidenavToggler {
+      color: #fff;
+      background-color: #007bff;
+  }
+}
+@media (max-width: 991px) {
+  // Navigation Active Link In Collapsed Menu
+  #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a {
+    color: rgba(0, 0, 0, 0.9) !important;
+  }
+}

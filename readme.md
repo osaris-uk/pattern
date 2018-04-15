@@ -18,11 +18,12 @@ Pattern is a simple boilerplate for Laravel applications.  It includes a standar
  - EU cookie consent using [Cookieconsent](https://github.com/insites/cookieconsent)
  - 'My Account' Area including dashboard, account update and change password functionality
  - env:set {env} artisan command
- - Bootstrap 4.1
+ - [Bootstrap](https://getbootstrap.com/) 4.1
+ - [FontAwesome](https://fontawesome.com/) Free 5.0.10
 
 ## New features / issues?
 
-If you have any ideas for other features to include or see any issues get in touch and I'll have a look, but bear in mind a few things:
+If you have any ideas for other features to include or see any issues get in touch and I'll have a look, but please bear in mind a few things:
 
  - This specifically uses Laravel 5.5 as my current hosting provider does not currently support 5.6
  - The primary reason I created this is to make my life easier
