@@ -29,6 +29,6 @@ Route::group(['prefix' => 'account', 'as' => 'account.', 'middleware' => ['auth'
     Route::post('password', 'Account\PasswordController@store')->name('password.store');
 });
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['role:admin']], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['access:admin']], function () {
     Route::get('/', 'Admin\AdminController@index')->name('index');
 });

@@ -7,6 +7,12 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
+// Font Awesome
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+
 html {
   position: relative;
   min-height: 100%;
@@ -46,17 +52,16 @@ body {
 #mainNav .navbar-collapse .navbar-nav .nav-item .nav-link {
   cursor: pointer;
 }
-#mainNav .navbar-collapse .navbar-sidenav .nav-link-collapse .svg-inline--fa.fa-angle-down,
-#mainNav .navbar-collapse .navbar-sidenav .nav-link-collapse .svg-inline--fa.fa-angle-right {
-  float: right;
-}
 #mainNav .navbar-collapse .navbar-sidenav .nav-link-collapse:after {
-  display: none;
+  float: right;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   content: '\f107';
-  font-family: 'Font Awesome 5 Solid';
 }
 #mainNav .navbar-collapse .navbar-sidenav .nav-link-collapse.collapsed:after {
-  display: none;
+  float: right;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   content: '\f105';
 }
 #mainNav .navbar-collapse .navbar-sidenav .sidenav-second-level,
