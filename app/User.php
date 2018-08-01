@@ -35,7 +35,7 @@ class User extends Authenticatable
 
     public function scopeByActivationTokenAndEmail($query, $token, $email)
     {
-        return $query->where('activation_token', $token)->where('email', $email);
+        return $query->where('activation_token', $token)->whereNotNull('activation_token')->where('email', $email);
     }
 
     public static function rules()
