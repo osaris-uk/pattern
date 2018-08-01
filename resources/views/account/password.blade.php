@@ -8,7 +8,7 @@
 
         <div class="form-group">
             <label for="current_password" class="form-label text-md-right">Current Password</label>
-            <input id="current_password" type="current_password" class="form-control{{ $errors->has('current_password') ? ' is-invalid' : '' }}" name="current_password" required>
+            <input id="current_password" type="password" class="form-control{{ $errors->has('current_password') ? ' is-invalid' : '' }}" name="current_password" required>
             @if ($errors->has('current_password'))
                 <span class="invalid-feedback">
                     <strong>{{ $errors->first('current_password') }}</strong>

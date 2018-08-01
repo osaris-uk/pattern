@@ -1,3 +1,4 @@
+
 window._ = require('lodash');
 window.Popper = require('popper.js').default;
 
@@ -49,27 +50,12 @@ if (token) {
 
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
-//     key: 'your-pusher-key'
+//     key: process.env.MIX_PUSHER_APP_KEY,
+//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+//     encrypted: true
 // });
 
 /**
  * Import SweetAlert
  */
 import swal from 'sweetalert';
-
-/**
- * Import Font Awesome
- */
-import fontawesome from '@fortawesome/fontawesome'
-
-fontawesome.config = {
-	searchPseudoElements: true
-};
-
-import regular from '@fortawesome/fontawesome-free-regular'
-import solid from '@fortawesome/fontawesome-free-solid'
-import brands from '@fortawesome/fontawesome-free-brands'
-
-fontawesome.library.add(regular)
-fontawesome.library.add(solid)
-fontawesome.library.add(brands)

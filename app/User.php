@@ -2,13 +2,13 @@
 
 namespace App;
 
-use App\Permissions\HasPermissionsTrait;
+use OsarisUk\Access\AccessTrait;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable, HasPermissionsTrait;
+    use Notifiable, AccessTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -35,7 +35,7 @@ class User extends Authenticatable
 
     public function scopeByActivationTokenAndEmail($query, $token, $email)
     {
-        return $query->where('activation_token', $token)->where('email', $email);
+        return $query->where('activation_token', $token)->whereNotNull('activation_token')->where('email', $email);
     }
 
     public static function rules()
