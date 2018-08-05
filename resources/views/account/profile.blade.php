@@ -4,7 +4,7 @@
 
 @section('account.content')
     <form method="POST" action="{{ route('account.profile.store') }}">
-        {{ csrf_field() }}
+        @csrf
 
         <div class="form-group">
             <label for="name" class="form-label text-md-right">Name</label>

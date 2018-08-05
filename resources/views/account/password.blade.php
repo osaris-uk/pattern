@@ -4,7 +4,7 @@
 
 @section('account.content')
     <form method="POST" action="{{ route('account.password.store') }}">
-        {{ csrf_field() }}
+        @csrf
 
         <div class="form-group">
             <label for="current_password" class="form-label text-md-right">Current Password</label>
