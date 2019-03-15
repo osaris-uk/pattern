@@ -28,13 +28,13 @@
     </head>
     <body>
         <div id="app">
-            @include('admin.layouts.partials.navigation')
+            @include('admin._layouts.partials.navigation')
             <div class="content-wrapper">
                 <div class="container-fluid">
-                    @include('layouts.partials.notifications')
+                    @include('_layouts.partials.notifications')
                     @yield('content')
                 </div>
-                @include('admin.layouts.partials.footer')
+                @include('admin._layouts.partials.footer')
             </div>
         </div>
     </body>

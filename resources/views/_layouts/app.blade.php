@@ -54,14 +54,14 @@
 </head>
 <body>
     <div id="app">
-        @include('layouts.partials.navigation')
+        @include('_layouts.partials.navigation')
         <main class="py-4">
             <div class="container">
-                @include('layouts.partials.notifications')
+                @include('_layouts.partials.notifications')
                 @yield('content')
             </div>
         </main>
-        @include('layouts.partials.footer')
+        @include('_layouts.partials.footer')
     </div>
 </body>
 </html>
