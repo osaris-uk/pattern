@@ -1,5 +1,5 @@
 # pattern
-A simple pattern for Laravel 5.6
+A simple pattern for Laravel 5.8
 
 ## Installation
 
@@ -12,20 +12,17 @@ After composer has finished hook up your DB in .env and run `php artisan migrate
 Pattern is a simple boilerplate for Laravel applications.  It includes a standard laravel installation but with some other features pre-configured:
 
  - Role & Permission based access control using [osaris-uk/access](https://github.com/osaris-uk/access)
-   - Plus basic admin layout and menu
- - E-Mail account activation
+   - Plus basic admin layout and sidenav menu
+ - Database driven navigation support using [osaris-uk/navigation](https://github.com/osaris-uk/navigation)
  - [Sweet Alert](https://github.com/t4t5/sweetalert) preinstalled
  - Notifications built in using [Notify](https://github.com/codecourse/notify)
  - EU cookie consent using [Cookieconsent](https://github.com/insites/cookieconsent)
  - 'My Account' Area including dashboard, account update and change password functionality
- - [Font Awesome](https://fontawesome.com/) Free 5.2.0
+ - [Font Awesome](https://fontawesome.com/) Free 5.8.2 preinstalled
 
-## New features / issues?
+## New features / issues
 
-If you have any ideas for other features to include or see any issues get in touch and I'll have a look, but please bear in mind a couple things:
-
- - The primary reason I created this is to make my life easier
- - I don't want to over complicate things
+If you have any ideas for other features to include or see any issues get in touch and I'll have a look.
 
 ## Thanks to..
 

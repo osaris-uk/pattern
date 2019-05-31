@@ -1,9 +1,8 @@
-
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import "variables";
+@import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
@@ -20,10 +19,6 @@
 html {
   position: relative;
   min-height: 100%;
-}
-body {
-  margin-top: 55px;
-  margin-bottom: 60px;
 }
 .navbar {
   background-color: #fff;

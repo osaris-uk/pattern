@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mail\Account;
+namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
@@ -30,6 +30,6 @@ class PasswordUpdated extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->subject('Password Updated')->markdown('emails.account.password.updated');
+        return $this->subject('Password Updated')->markdown('mail.account.password.updated');
     }
 }
