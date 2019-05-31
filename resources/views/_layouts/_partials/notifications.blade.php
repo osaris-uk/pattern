@@ -11,10 +11,12 @@
 
 @if (notify()->ready() && notify()->option('provider') === 'swal')
     <script>
-        swal({
-            title: "{!! notify()->message() !!}",
-            icon: "{{ notify()->type() }}",
-            {!! notify()->option('options') ? notify()->option('options') : '' !!}
+        window.addEventListener('DOMContentLoaded', function() {
+            swal({
+                title: "{!! notify()->message() !!}",
+                icon: "{{ notify()->type() }}",
+                {!! notify()->option('options') ? notify()->option('options') : '' !!}
+            });
         });
     </script>
 @endif

@@ -8,7 +8,6 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-
         <title>
             @hasSection('title')
                 {{ config('app.name', 'Pattern') }} | Admin | @yield('title')
@@ -19,6 +18,7 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/admin.js') }}" defer></script>
+        @yield('scripts')
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -26,10 +26,12 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+        @yield('styles')
     </head>
     <body>
+        @include('admin._layouts._partials.navigation')
+
         <div id="app">
-            @include('admin._layouts._partials.navigation')
             <div class="content-wrapper">
                 <div class="container-fluid">
                     @include('admin._layouts._partials.notifications')

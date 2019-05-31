@@ -5,3 +5,9 @@
 @section('account.content')
     Account Overview
 @endsection
+
+@section('styles')
+@endsection
+
+@section('scripts')
+@endsection

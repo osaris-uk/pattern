@@ -7,3 +7,9 @@
         <h4>{{ __('Terms Of Service') }}</h4>
     </div>
 @endsection
+
+@section('styles')
+@endsection
+
+@section('scripts')
+@endsection
