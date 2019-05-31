@@ -1,10 +1,10 @@
-@extends('account.layouts.default')
+@extends('account._layouts.default')
 
 @section('title') Change Password @endsection
 
 @section('account.content')
     <form method="POST" action="{{ route('account.password.store') }}">
-        {{ csrf_field() }}
+        @csrf
 
         <div class="form-group">
             <label for="current_password" class="form-label text-md-right">Current Password</label>

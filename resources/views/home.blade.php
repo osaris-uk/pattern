@@ -1,12 +1,15 @@
-@extends('layouts.app')
+@extends('_layouts.app')
 
 @section('content')
+<div class="container">
     <i class="fas fa-home"></i> Home<hr>
+
+    Role: @role('user') User @endrole<hr>
+
     <div class="card">
-        <div class="card-header">
-            Custom Blade Directives
-        </div>
-        <div class="card-block">
+        <div class="card-header">Custom Blade Directives</div>
+
+        <div class="card-body">
             <h5>&#64;role()</h5>
             <p>
                 <code>
@@ -17,44 +20,23 @@
             <h5>&#64;activeclass()</h5>
             <p>
                 <code>
-                    &#64;activeclass('account'), &#64;activeclass('/'), etc..
+                    &#64;activeclass('account.index')
                 </code>
             </p>
             <p>
-                Usage: class="&#64;activeclass('account/*')" - outputs 'active' if the current request is /account/*anything*<br>
-                Usage: class="&#64;activeclass('account')" - outputs 'active' if the current request is /account
+                Usage: class="&#64;activeclass('account.index')" - outputs 'active' if the current request matches 'account.index'<br>
+            </p>
+            
+            <h5>&#64;openclass()</h5>
+            <p>
+                <code>
+                    &#64;openclass($navItem['children'])
+                </code>
+            </p>
+            <p>
+                Usage: class="&#64;openclass($navItem['children'])" - accepts an array of child route names outputs 'open' if the current route is a parent to any of the children.
             </p>
         </div>
     </div>
-    <br> 
-    <div class="card">
-        <div class="card-header">
-            notify()
-        </div>
-        <div class="card-block">
-            <h5>SweetAlert</h5>
-            <p>
-                <code>
-                    notify()->flash('Welcome!', 'success', [<br>
-                        &nbsp;&nbsp;'provider' => 'swal',<br>
-                        &nbsp;&nbsp;'options' => "<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;text: \"Please check your emails for an activation link.\",<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;button: true,<br>
-                        &nbsp;&nbsp;",<br>
-                    ]);<br>
-                </code>
-            </p>
-
-            <h5>Bootstrap</h5>
-            <p>
-                <code>
-                    notify()->flash('Password Successfully Changed', 'success');<br>
-                </code>
-                <code>
-                    notify()->flash('Password Change Failed', 'danger');<br>
-                </code>
-                
-            </p>
-        </div>
-    </div>
+</div>
 @endsection

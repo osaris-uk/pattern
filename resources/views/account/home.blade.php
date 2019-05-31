@@ -1,4 +1,4 @@
-@extends('account.layouts.default')
+@extends('account._layouts.default')
 
 @section('title') Account Overview @endsection
 

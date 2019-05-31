@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Account;
 
 use App\User;
 use Illuminate\Http\Request;
+use App\Mail\PasswordUpdated;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
-use App\Mail\Account\PasswordUpdated;
 
 class PasswordController extends Controller
 {

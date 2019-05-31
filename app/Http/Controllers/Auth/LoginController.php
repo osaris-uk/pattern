@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -37,27 +35,5 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-    }
-
-    /**
-     * Validate the user login request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return void
-     */
-    protected function validateLogin(Request $request)
-    {
-        $this->validate($request, [
-            $this->username() => [
-                'required',
-                'string',
-                Rule::exists('users')->where(function($query) {
-                    $query->where('active', true);
-                })
-            ],
-            'password' => 'required|string',
-        ], [
-            $this->username() . '.exists' => 'No active user found, please either register or activate your account.'
-        ]);
     }
 }
