@@ -1,6 +1,6 @@
 @if (notify()->ready() && notify()->option('provider') !== 'swal')
-    <div class="container">
-        <div class="mt-n4 alert alert-{{ notify()->type() }}" role="alert">
+    <div class="alert alert-{{ notify()->type() }} my-0" style="border-radius: 0;" role="alert">
+        <div class="container">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -11,10 +11,12 @@
 
 @if (notify()->ready() && notify()->option('provider') === 'swal')
     <script>
-        swal({
-            title: "{!! notify()->message() !!}",
-            icon: "{{ notify()->type() }}",
-            {!! notify()->option('options') ? notify()->option('options') : '' !!}
+        window.addEventListener('DOMContentLoaded', function() {
+            swal({
+                title: "{!! notify()->message() !!}",
+                icon: "{{ notify()->type() }}",
+                {!! notify()->option('options') ? notify()->option('options') : '' !!}
+            });
         });
     </script>
 @endif

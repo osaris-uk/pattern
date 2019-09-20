@@ -5,3 +5,9 @@
 @section('content')
     Admin Dashboard
 @endsection
+
+@section('styles')
+@endsection
+
+@section('scripts')
+@endsection

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -17,6 +17,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    @yield('scripts')
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,6 +25,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('styles')
 
     <!-- EU Cookie Warning -->
     <script>
@@ -52,11 +54,12 @@
     </script>
 </head>
 <body>
+    @include('_layouts._partials.notifications')
+
     <div id="app">
         @include('_layouts._partials.navigation')
 
         <main class="py-4">
-            @include('_layouts._partials.notifications')
             @yield('content')
         </main>
 

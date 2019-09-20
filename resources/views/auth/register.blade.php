@@ -67,10 +67,11 @@
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
                                     <input class="form-check-input @error('terms') is-invalid @enderror" type="checkbox" name="terms" id="terms" {{ old('terms') ? 'checked' : '' }}>
+
                                     <label class="form-check-label" for="terms">
                                         {{ __('I accept the') }} <a href="{{ route('terms') }}" target="_blank">{{ __('terms of service') }}</a>
                                     </label>
-                                    @error('terms'))
+                                    @error('terms')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
