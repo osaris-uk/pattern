@@ -8,31 +8,31 @@
 @import '~bootstrap/scss/bootstrap';
 
 // CookieConsent
-@import "~cookieconsent/build/cookieconsent.min.css";
+@import '~cookieconsent/build/cookieconsent.min.css';
 
 // Font Awesome
-@import '~@fortawesome/fontawesome-free/scss/brands.scss';
-@import '~@fortawesome/fontawesome-free/scss/regular.scss';
-@import '~@fortawesome/fontawesome-free/scss/solid.scss';
-@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
 
 html {
-  position: relative;
-  min-height: 100%;
-}
-.navbar {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-  background-color: #fff;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.04);
-}
-.card-block {
-  padding: 20px;
-}
+    position: relative;
+    min-height: 100%;
+  }
+  .navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #fff;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.04);
+  }
+  .card-block {
+    padding: 20px;
+  }

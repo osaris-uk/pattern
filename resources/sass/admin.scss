@@ -2,16 +2,16 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import "variables";
+@import 'variables';
 
 // Bootstrap
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
 
 // Font Awesome
-@import '~@fortawesome/fontawesome-free/scss/brands.scss';
-@import '~@fortawesome/fontawesome-free/scss/regular.scss';
-@import '~@fortawesome/fontawesome-free/scss/solid.scss';
-@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
 
 html {
   position: relative;
@@ -266,6 +266,16 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a {
     color: #fff !important;
     background-color: #007bff !important;
+  }
+  // Sidebar Collapsed Active Parent
+  body.sidenav-toggled #mainNav.navbar-light .navbar-collapse .navbar-sidenav a.active {
+    color: #fff !important;
+    background-color: #007bff !important;
+  }
+  // Sidebar Active Parent
+  #mainNav.navbar-light .navbar-collapse .navbar-sidenav a.active {
+    color: rgba(0, 0, 0, 0.7) !important;
+    background-color: #f8f9fa !important;
   }
   // Sidebar Link Hover Background
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav li a:hover {
