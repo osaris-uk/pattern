@@ -11,6 +11,10 @@
 			sitekey: {
 				type: String,
 				required: true
+            },
+            formname: {
+				type: String,
+				required: true
 			},
 			badge: {
 				type: String,
@@ -73,7 +77,7 @@
 			click: function() {
 				grecaptcha.execute();
 				
-				var form = document.getElementById("contactForm");
+				var form = document.getElementById(this.formname);
 
 				setTimeout( function submitResponse(){
 					if (grecaptcha.getResponse().length > 0) {

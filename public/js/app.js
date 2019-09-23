@@ -1884,6 +1884,10 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       required: true
     },
+    formname: {
+      type: String,
+      required: true
+    },
     badge: {
       type: String,
       required: false,
@@ -1941,7 +1945,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     click: function click() {
       grecaptcha.execute();
-      var form = document.getElementById("contactForm");
+      var form = document.getElementById(this.formname);
       setTimeout(function submitResponse() {
         if (grecaptcha.getResponse().length > 0) {
           form.submit();
