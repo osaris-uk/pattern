@@ -1862,6 +1862,123 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recaptcha.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Recaptcha.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    sitekey: {
+      type: String,
+      required: true
+    },
+    badge: {
+      type: String,
+      required: false,
+      "default": 'bottomright'
+    },
+    theme: {
+      type: String,
+      required: false,
+      "default": 'light'
+    },
+    validate: {
+      type: Function,
+      required: false
+    },
+    disabled: {
+      type: Boolean,
+      required: false,
+      "default": false
+    },
+    id: {
+      type: String,
+      required: false
+    },
+    reference: {
+      type: String,
+      required: false
+    },
+    type: {
+      type: String,
+      required: false,
+      "default": 'submit'
+    }
+  },
+  data: function data() {
+    return {
+      widgetId: false,
+      loaded: false
+    };
+  },
+  methods: {
+    render: function render() {
+      this.widgetId = grecaptcha.render(this.recaptchaId, {
+        sitekey: this.sitekey,
+        size: 'invisible',
+        badge: this.badge,
+        theme: this.theme
+      });
+      this.loaded = true;
+    },
+    renderWait: function renderWait() {
+      var self = this;
+      setTimeout(function () {
+        if (typeof grecaptcha !== 'undefined' && grecaptcha.render) self.render();else self.renderWait();
+      }, 200);
+    },
+    click: function click() {
+      grecaptcha.execute();
+      var form = document.getElementById("contactForm");
+      setTimeout(function submitResponse() {
+        if (grecaptcha.getResponse().length > 0) {
+          form.submit();
+        } else {
+          setTimeout(function () {
+            submitResponse();
+          }, 200);
+        }
+      }, 200);
+    }
+  },
+  computed: {
+    computedClass: function computedClass() {
+      var classArray = this["class"] ? this["class"].split(' ') : [];
+
+      if (this.value) {
+        classArray.push('invisible-recaptcha');
+      }
+
+      return classArray;
+    },
+    recaptchaId: function recaptchaId() {
+      return 'vue-invisible-recaptcha-' + this._uid;
+    }
+  },
+  mounted: function mounted() {
+    if (typeof grecaptcha === 'undefined') {
+      var script = document.createElement('script');
+      script.src = 'https://www.google.com/recaptcha/api.js?render=explicit';
+      script.onload = this.renderWait;
+      document.head.appendChild(script);
+    } else this.render();
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
@@ -37211,6 +37328,53 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recaptcha.vue?vue&type=template&id=a530f8e8&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Recaptcha.vue?vue&type=template&id=a530f8e8& ***!
+  \************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "button",
+    {
+      ref: _vm.reference,
+      class: _vm.computedClass,
+      attrs: {
+        id: _vm.id,
+        type: _vm.type,
+        disabled: !_vm.loaded || _vm.disabled
+      },
+      on: {
+        click: function($event) {
+          $event.preventDefault()
+          return _vm.click($event)
+        }
+      }
+    },
+    [
+      _c("div", { attrs: { id: _vm.recaptchaId, "data-size": "invisible" } }),
+      _vm._v(" "),
+      _vm._t("default")
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
 /*!********************************************************************!*\
   !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
@@ -49377,6 +49541,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
+Vue.component('recaptcha', __webpack_require__(/*! ./components/Recaptcha.vue */ "./resources/js/components/Recaptcha.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -49532,6 +49697,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Recaptcha.vue":
+/*!***********************************************!*\
+  !*** ./resources/js/components/Recaptcha.vue ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Recaptcha_vue_vue_type_template_id_a530f8e8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Recaptcha.vue?vue&type=template&id=a530f8e8& */ "./resources/js/components/Recaptcha.vue?vue&type=template&id=a530f8e8&");
+/* harmony import */ var _Recaptcha_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Recaptcha.vue?vue&type=script&lang=js& */ "./resources/js/components/Recaptcha.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Recaptcha_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Recaptcha_vue_vue_type_template_id_a530f8e8___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Recaptcha_vue_vue_type_template_id_a530f8e8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Recaptcha.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Recaptcha.vue?vue&type=script&lang=js&":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/Recaptcha.vue?vue&type=script&lang=js& ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Recaptcha_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Recaptcha.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recaptcha.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Recaptcha_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Recaptcha.vue?vue&type=template&id=a530f8e8&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/Recaptcha.vue?vue&type=template&id=a530f8e8& ***!
+  \******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Recaptcha_vue_vue_type_template_id_a530f8e8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Recaptcha.vue?vue&type=template&id=a530f8e8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recaptcha.vue?vue&type=template&id=a530f8e8&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Recaptcha_vue_vue_type_template_id_a530f8e8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Recaptcha_vue_vue_type_template_id_a530f8e8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/sass/admin.scss":
 /*!***********************************!*\
   !*** ./resources/sass/admin.scss ***!
@@ -49561,9 +49795,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/vagrant/code/kniteforce/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /home/vagrant/code/kniteforce/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /home/vagrant/code/kniteforce/resources/sass/admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! /home/vagrant/code/pattern/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /home/vagrant/code/pattern/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /home/vagrant/code/pattern/resources/sass/admin.scss */"./resources/sass/admin.scss");
 
 
 /***/ })

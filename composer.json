@@ -17,6 +17,7 @@
         "php": "^7.2",
         "codecourse/notify": "master",
         "fideloper/proxy": "^4.0",
+        "google/recaptcha": "^1.2",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
         "laravel/ui": "^1.0",

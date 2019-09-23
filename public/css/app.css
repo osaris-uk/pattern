@@ -16502,6 +16502,10 @@ html {
   min-height: 100%;
 }
 
+body {
+  margin-bottom: 60px;
+}
+
 .navbar {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -16519,5 +16523,9 @@ html {
 
 .card-block {
   padding: 20px;
+}
+
+.grecaptcha-badge {
+  z-index: 1000;
 }
 
