@@ -253,9 +253,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   color: rgba(0, 0, 0, 0.7);
 }
 @media (min-width: 992px) {
-  // Main Sidebar Background Color
+  // Main Sidebar Background Color & Shadow
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav {
     background: #fff;
+    box-shadow: 6px 0px 4px -4px rgba(0,0,0,0.04);
   }
   // Sidebar Dropdown Background Color
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level,

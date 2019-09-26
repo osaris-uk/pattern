@@ -16774,6 +16774,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 @media (min-width: 992px) {
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav {
     background: #fff;
+    box-shadow: 6px 0px 4px -4px rgba(0, 0, 0, 0.04);
   }
 
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level,
