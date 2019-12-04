@@ -15,7 +15,7 @@
         "babel-plugin-syntax-dynamic-import": "^6.18.0",
         "bootstrap": "~4.3.1",
         "cross-env": "^5.1",
-        "jquery": "^3.2",
+        "jquery": "^3.4",
         "laravel-mix": "~2.1.14",
         "lodash": "^4.17.13",
         "popper.js": "^1.12",
@@ -31,6 +31,7 @@
     },
     "resolutions": {
         "js-yaml": "^3.13.1",
-        "mem": "^4.0.0"
+        "mem": "^4.0.0",
+        "webpack-dev-server": "^3.1.11"
       }
 }
