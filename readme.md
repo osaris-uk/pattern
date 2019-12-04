@@ -1,5 +1,5 @@
 # pattern
-A simple pattern for Laravel 6.0 (LTS)
+A simple pattern for Laravel 6
 
 ## Installation
 
