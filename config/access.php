@@ -18,7 +18,7 @@ return [
     'routes' => [
         'use_provided' => true,
         'name' => 'admin.settings.access',
-        'prefix' => 'admin/access',
+        'prefix' => 'admin/settings/access',
         'middleware' => [
             'web',
             'access:admin'

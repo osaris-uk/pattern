@@ -16,12 +16,14 @@
     "require": {
         "php": "^7.2",
         "codecourse/notify": "master",
+        "doctrine/dbal": "^2.10",
         "fideloper/proxy": "^4.0",
         "google/recaptcha": "^1.2",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
         "laravel/ui": "^1.0",
         "osaris-uk/access": "^1.5",
+        "osaris-uk/app-settings": "^1.0",
         "osaris-uk/log-viewer": "^1.0",
         "osaris-uk/navigation": "^1.3"
     },

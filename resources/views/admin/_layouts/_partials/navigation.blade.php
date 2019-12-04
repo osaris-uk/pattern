@@ -4,46 +4,51 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-            <li class="nav-item @activeclass('admin.index')" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="{{ route('admin.index') }}">
-                    <i class="fa fa-fw fa-tachometer-alt"></i>
-                    <span class="nav-link-text">Dashboard</span>
-                </a>
-            </li>
-
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
-                <a class="nav-link nav-link-collapse @activeclass('admin.settings.') @collapsedclass('admin.settings.')" data-toggle="collapse" href="#settings" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-cogs"></i>
-                    <span class="nav-link-text">Settings</span>
-                </a>
-                <ul class="sidenav-second-level collapse @showclass('admin.settings.')" id="settings">
-                    <li>
-                        <a class="nav-link-collapse @activeclass('admin.settings.access.') @collapsedclass('admin.settings.access.')" data-toggle="collapse" href="#settingsAccess">
-                            <i class="fa fa-fw fa-key"></i>    
-                            <span class="nav-link-text">Access</span>
+        <ul class="navbar-nav navbar-sidenav" id="adminSidenav">
+        @foreach($navItems as $navItem)
+                @if (count($navItem['children']))
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ $navItem->title }}">
+                        <a class="nav-link nav-link-collapse @activeclass($navItem->route) @collapsedclass($navItem->route)" data-toggle="collapse" href="#{{ strtolower($navItem->title) . '-' . $navItem->id }}" data-parent="#adminSidenav">
+                            {!! $navItem->icon ? '<i class="fa fa-fw ' . $navItem->icon . '"></i>' : '' !!}
+                            <span class="nav-link-text">{{ $navItem->title }}</span>
                         </a>
-                        <ul class="sidenav-third-level collapse @showclass('admin.settings.access.')" id="settingsAccess">
-                            <li class="nav-item @activeclass('admin.settings.access.roles')">
-                                <a href="{{ route('admin.settings.access.roles') }}">User Roles</a>
-                            </li>
-                            <li class="nav-item @activeclass('admin.settings.access.rolepermissions')">
-                                <a href="{{ route('admin.settings.access.rolepermissions') }}">Role Permissions</a>
-                            </li>
-                            <li class="nav-item @activeclass('admin.settings.access.index')">
-                                <a href="{{ route('admin.settings.access.index') }}">Roles & Permissions</a>
-                            </li>
+
+                        <ul class="sidenav-second-level collapse @showclass($navItem->route)" id="{{ strtolower($navItem->title) . '-' . $navItem->id }}">
+                            @foreach($navItem['children'] as $child)
+                                @if (count($child['children']))
+                                    <li>
+                                        <a class="nav-link nav-link-collapse @activeclass($child->route) @collapsedclass($child->route)" data-toggle="collapse" href="#{{ strtolower($child->title) . '-' . $child->id }}" data-parent="#adminSidenav">
+                                            {!! $child->icon ? '<i class="fa fa-fw ' . $child->icon . '"></i>' : '' !!}
+                                            <span class="nav-link-text">{{ $child->title }}</span>
+                                        </a>
+                                        <ul class="sidenav-third-level collapse @showclass($child->route)" id="{{ strtolower($child->title) . '-' . $child->id }}">
+                                            @foreach($child['children'] as $grandchild)
+                                                <li class="nav-item @activeclass($grandchild->route)">
+                                                    <a href="{{ route($grandchild->route) }}">{{ $grandchild->title }}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                @else
+                                    <li class="nav-item @activeclass($child->route)" data-toggle="tooltip" data-placement="right" title="{{ $child->title }}">
+                                        <a class="nav-link" href="{{ $child->route ? route($child->route) : '' }}{{ $child->target }}">
+                                            {!! $child->icon ? '<i class="fa fa-fw ' . $child->icon . '"></i>' : '' !!}
+                                            <span class="nav-link-text">{{ $child->title }}</span>
+                                        </a>
+                                    </li>
+                                @endif
+                            @endforeach
                         </ul>
                     </li>
-                    <li class="nav-item @activeclass('admin.settings.logs.index')">
-                        <a class="nav-link" href="{{ route('admin.settings.logs.index') }}">
-                            <i class="fa fa-fw fa-bug"></i>
-                            <span class="nav-link-text">Logs</span>
+                @else
+                    <li class="nav-item @activeclass($navItem->route)" data-toggle="tooltip" data-placement="right" title="{{ $navItem->title }}">
+                        <a class="nav-link" href="{{ $navItem->route ? route($navItem->route) : '' }}{{ $navItem->target }}">
+                            {!! $navItem->icon ? '<i class="fa fa-fw ' . $navItem->icon . '"></i>' : '' !!}
+                            <span class="nav-link-text">{{ $navItem->title }}</span>
                         </a>
                     </li>
-                </ul>
-            </li>
-            
+                @endif
+            @endforeach
         </ul>
         <ul class="navbar-nav sidenav-toggler">
             <li class="nav-item">

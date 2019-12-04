@@ -7,6 +7,8 @@ A simple pattern for Laravel 6
 
 After composer has finished hook up your DB in .env and run `php artisan migrate`
 
+Be sure to recompile front end assets (npm run dev) once you have updated your .env file with your APP_URL.
+
 ## What is pattern?
 
 Pattern is a simple boilerplate for Laravel applications.  It includes a standard laravel installation but with some other features pre-configured:
@@ -14,7 +16,9 @@ Pattern is a simple boilerplate for Laravel applications.  It includes a standar
  - Role & Permission based access control using [osaris-uk/access](https://github.com/osaris-uk/access)
    - Plus basic admin layout and sidenav menu
  - Log viewing in app using [osaris-uk/log-viewer](https://github.com/osaris-uk/log-viewer)
- - Database driven navigation support using [osaris-uk/navigation](https://github.com/osaris-uk/navigation)
+ - Cached database driven app settings using [osaris-uk/app-settings](https://github.com/osaris-uk/app-settings)
+ - Database driven admin navigation using [osaris-uk/navigation](https://github.com/osaris-uk/navigation)
+ - Reusable vue Data Table component.
  - [Sweet Alert](https://github.com/t4t5/sweetalert) preinstalled
  - Notifications built in using [Notify](https://github.com/codecourse/notify)
  - EU cookie consent using [Cookieconsent](https://github.com/insites/cookieconsent)

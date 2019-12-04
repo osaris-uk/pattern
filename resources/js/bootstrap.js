@@ -1,3 +1,5 @@
+__webpack_public_path__ = process.env.MIX_APP_URL
+
 window._ = require('lodash');
 
 /**
