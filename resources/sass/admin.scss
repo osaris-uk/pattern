@@ -87,6 +87,20 @@ body {
 #mainNav .navbar-collapse .sidenav-toggler {
   display: none;
 }
+
+.sidenav-toggled #adminSidenav::-webkit-scrollbar {
+  display: none;
+}
+
+#adminSidenav::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+#adminSidenav::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
 @media (min-width: 992px) {
   #mainNav .navbar-brand {
     width: 250px;
@@ -103,6 +117,7 @@ body {
     -ms-flex-direction: column;
     flex-direction: column;
     margin-top: 55px;
+    overflow-y: auto;
   }
   #mainNav .navbar-collapse .navbar-sidenav > .nav-item {
     width: 250px;
@@ -136,7 +151,7 @@ body {
 }
 @media (min-width: 992px) {
   #mainNav.fixed-top .navbar-sidenav {
-    height: calc(101vh - 112px);
+    height: calc(101vh - 118px);
   }
   #mainNav.fixed-top .sidenav-toggler {
     position: absolute;
@@ -253,9 +268,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   color: rgba(0, 0, 0, 0.7);
 }
 @media (min-width: 992px) {
-  // Main Sidebar Background Color
+  // Main Sidebar Background Color & Shadow
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav {
     background: #fff;
+    box-shadow: 6px 0px 4px -4px rgba(0,0,0,0.04);
   }
   // Sidebar Dropdown Background Color
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level,

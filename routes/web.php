@@ -21,6 +21,18 @@ Route::get('/terms', function () {
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['access:admin']], function () {
     Route::get('/', 'Admin\AdminController@index')->name('index');
+
+    // Settings
+    Route::group(['prefix' => 'settings', 'as' => 'settings.'], function () {
+        Route::get('/app-settings', 'Admin\AppSettingsController@index')->name('app-settings');
+        Route::post('/app-settings', 'Admin\AppSettingsController@store');
+        Route::get('/navigation', 'Admin\NavigationController@index')->name('navigation');
+    });
+
+    // Data
+    Route::group(['prefix' => 'data', 'as' => 'data.'], function () {
+        Route::resource('navigations', 'Admin\NavigationDataTableController');
+    });
 });
 
 Route::group(['prefix' => 'account', 'as' => 'account.', 'middleware' => ['auth']], function () {
